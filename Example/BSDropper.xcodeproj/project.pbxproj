@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472A5CF6220F631F000B6623 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CE6220F631E000B6623 /* Utility.swift */; };
+		472A5CFF220F631F000B6623 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF3220F631E000B6623 /* SampleViewController.swift */; };
+		472A5D00220F631F000B6623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF4220F631E000B6623 /* ViewController.swift */; };
+		472A5D01220F631F000B6623 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF5220F631E000B6623 /* UIViewController+Extension.swift */; };
+		47445E1E220F69D5003E0934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47445E1D220F69D5003E0934 /* Main.storyboard */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
@@ -32,13 +35,16 @@
 		0627B4C90DBB5C3C422574A5 /* Pods_BSDropper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSDropper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F732A66544A6C2528009D4 /* Pods-BSDropper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSDropper_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSDropper_Tests/Pods-BSDropper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		214B86C9CCCD5B4D88304A42 /* Pods-BSDropper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSDropper_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSDropper_Example/Pods-BSDropper_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		28922495F7BDDB59BED43BCE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		47254BA753DA774DDE6D12A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		28922495F7BDDB59BED43BCE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		47254BA753DA774DDE6D12A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		472A5CE6220F631E000B6623 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = "../../../../Library/Autosave Information/BSDropper/BSDropper/Utility.swift"; sourceTree = "<group>"; };
+		472A5CF3220F631E000B6623 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		472A5CF4220F631E000B6623 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		472A5CF5220F631E000B6623 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "../../../../Library/Autosave Information/BSDropper/BSDropper/UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		47445E1D220F69D5003E0934 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BSDropper_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSDropper_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* BSDropper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSDropper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +52,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		66A88779FB8A853CC0F01E9D /* Pods_BSDropper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSDropper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD6DCAC13FE4AE5CAFB0286 /* Pods-BSDropper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSDropper_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSDropper_Tests/Pods-BSDropper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F71B975B8A3977D1ECEB9463 /* BSDropper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = BSDropper.podspec; path = ../BSDropper.podspec; sourceTree = "<group>"; };
+		F71B975B8A3977D1ECEB9463 /* BSDropper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BSDropper.podspec; path = ../BSDropper.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472A5CE4220F62EE000B6623 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				472A5CE6220F631E000B6623 /* Utility.swift */,
+				472A5CF5220F631E000B6623 /* UIViewController+Extension.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				472A5CF4220F631E000B6623 /* ViewController.swift */,
+				472A5CF3220F631E000B6623 /* SampleViewController.swift */,
+				47445E1D220F69D5003E0934 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				472A5CE4220F62EE000B6623 /* Utility */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for BSDropper";
@@ -170,7 +187,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				E6948109FEA446C586EC2789 /* [CP] Embed Pods Frameworks */,
+				8E9E9426D6B6034FA8CDD3C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +229,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = D9B84574LT;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -245,7 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				47445E1E220F69D5003E0934 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -297,7 +315,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6948109FEA446C586EC2789 /* [CP] Embed Pods Frameworks */ = {
+		8E9E9426D6B6034FA8CDD3C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,7 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				472A5CF6220F631F000B6623 /* Utility.swift in Sources */,
+				472A5D00220F631F000B6623 /* ViewController.swift in Sources */,
+				472A5CFF220F631F000B6623 /* SampleViewController.swift in Sources */,
+				472A5D01220F631F000B6623 /* UIViewController+Extension.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,14 +367,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -469,7 +482,9 @@
 			baseConfigurationReference = 214B86C9CCCD5B4D88304A42 /* Pods-BSDropper_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D9B84574LT;
 				INFOPLIST_FILE = BSDropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -484,7 +499,9 @@
 			baseConfigurationReference = 04ED4832FE62C9B72BA3B951 /* Pods-BSDropper_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = D9B84574LT;
 				INFOPLIST_FILE = BSDropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

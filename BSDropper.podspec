@@ -31,10 +31,10 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'BSDropper/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'BSDropper' => ['BSDropper/Assets/*.png']
-  # }
+  s.swift_version = '4.2'
+  s.resource_bundles = {
+    'BSDropper' => ['BSDropper/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

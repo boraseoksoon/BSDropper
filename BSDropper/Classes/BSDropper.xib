@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BSDropper" customModule="BSDropper" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSDropper" customModule="BSDropper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-Am-le9">
+                    <rect key="frame" x="31" y="30" width="147" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="7BL-ud-bgm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
+                    <state key="normal" title="BRDropper">
+                        <color key="titleColor" red="0.1058823529" green="0.3294117647" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionBtTopicSelect:" destination="iN0-l3-epB" eventType="touchUpInside" id="LxM-WC-gCZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Im-sQ-3Px">
+                    <rect key="frame" x="283" y="36.666666666666664" width="20" height="22"/>
+                    <state key="normal" image="alarmNotice"/>
+                    <connections>
+                        <action selector="actionBtAlarm:" destination="iN0-l3-epB" eventType="touchUpInside" id="W7q-7g-GSX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-3f-7Wq">
+                    <rect key="frame" x="324" y="36.666666666666664" width="20" height="22"/>
+                    <state key="normal" image="combinedShape"/>
+                    <connections>
+                        <action selector="actionBtMyPage:" destination="iN0-l3-epB" eventType="touchUpInside" id="A6n-Iq-yFL"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bl-ZI-CCB">
+                    <rect key="frame" x="31" y="80" width="313" height="42"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-fq-S1n">
+                            <rect key="frame" x="0.0" y="0.0" width="313" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="Y5y-mU-Byl"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.1058823529" green="0.3294117647" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dNd-fq-S1n" firstAttribute="height" secondItem="3bl-ZI-CCB" secondAttribute="height" id="7jt-RR-EMD"/>
+                        <constraint firstItem="dNd-fq-S1n" firstAttribute="centerY" secondItem="3bl-ZI-CCB" secondAttribute="centerY" id="d4V-Kr-dfb"/>
+                        <constraint firstItem="dNd-fq-S1n" firstAttribute="width" secondItem="3bl-ZI-CCB" secondAttribute="width" id="r98-4a-Vek"/>
+                        <constraint firstItem="dNd-fq-S1n" firstAttribute="centerX" secondItem="3bl-ZI-CCB" secondAttribute="centerX" id="xKv-FV-Sn5"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdk-6a-iye">
+                    <rect key="frame" x="31" y="133" width="63" height="20"/>
+                    <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
+                    <state key="normal" title=" filter" image="filterGray">
+                        <color key="titleColor" red="0.75294117650000003" green="0.75294117650000003" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionBtFilterPost:" destination="iN0-l3-epB" eventType="touchUpInside" id="X7Y-oY-WAM"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boardListOpen" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-rS-3d1">
+                    <rect key="frame" x="188" y="43.666666666666664" width="10" height="8"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Zdk-6a-iye" firstAttribute="leading" secondItem="ySJ-Am-le9" secondAttribute="leading" id="2RB-vZ-egb"/>
+                <constraint firstItem="7Im-sQ-3Px" firstAttribute="centerY" secondItem="ySJ-Am-le9" secondAttribute="centerY" id="7dP-Wz-Nrt"/>
+                <constraint firstItem="3bl-ZI-CCB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="9TR-0D-IXf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3bl-ZI-CCB" secondAttribute="trailing" constant="31" id="Egs-KO-1Nl"/>
+                <constraint firstItem="3bl-ZI-CCB" firstAttribute="top" secondItem="ySJ-Am-le9" secondAttribute="bottom" constant="15" id="FWb-wC-c09"/>
+                <constraint firstItem="EJ2-rS-3d1" firstAttribute="leading" secondItem="ySJ-Am-le9" secondAttribute="trailing" constant="10" id="FuY-Qj-zcj"/>
+                <constraint firstItem="Zdk-6a-iye" firstAttribute="top" secondItem="3bl-ZI-CCB" secondAttribute="bottom" constant="11" id="OIa-cS-Xhx"/>
+                <constraint firstItem="CiU-3f-7Wq" firstAttribute="leading" secondItem="7Im-sQ-3Px" secondAttribute="trailing" constant="21" id="OtZ-6e-5nB"/>
+                <constraint firstItem="ySJ-Am-le9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="bsv-zy-UuC"/>
+                <constraint firstItem="EJ2-rS-3d1" firstAttribute="centerY" secondItem="ySJ-Am-le9" secondAttribute="centerY" id="dGU-H2-0kf"/>
+                <constraint firstItem="ySJ-Am-le9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="31" id="dbT-3q-5CW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CiU-3f-7Wq" secondAttribute="trailing" constant="31" id="qNK-Rj-V9G"/>
+                <constraint firstItem="ySJ-Am-le9" firstAttribute="width" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.52" id="tXE-8y-NEg"/>
+                <constraint firstItem="CiU-3f-7Wq" firstAttribute="centerY" secondItem="ySJ-Am-le9" secondAttribute="centerY" id="zLc-9X-Nid"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btAlarm" destination="7Im-sQ-3Px" id="etr-Zo-XHL"/>
+                <outlet property="btFilterPost" destination="Zdk-6a-iye" id="aM8-Vf-IM3"/>
+                <outlet property="btMyPage" destination="CiU-3f-7Wq" id="zCu-9o-sPr"/>
+                <outlet property="btTopicSelect" destination="ySJ-Am-le9" id="hVl-VS-9qf"/>
+                <outlet property="pnlSearchTextFieldViewBlock" destination="3bl-ZI-CCB" id="etH-dc-RJ2"/>
+                <outlet property="tfSearch" destination="dNd-fq-S1n" id="wB5-fS-rK8"/>
+            </connections>
+            <point key="canvasLocation" x="-57.5" y="-156.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alarmNotice" width="20" height="21"/>
+        <image name="boardListOpen" width="10" height="8"/>
+        <image name="combinedShape" width="20" height="20"/>
+        <image name="filterGray" width="20" height="20"/>
+    </resources>
+</document>

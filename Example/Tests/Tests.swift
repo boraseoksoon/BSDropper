@@ -1,5 +1,4 @@
 import XCTest
-import BSDropper
 
 class Tests: XCTestCase {
     
