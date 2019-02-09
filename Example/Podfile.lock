@@ -1,0 +1,16 @@
+PODS:
+  - BSDropper (0.1.0)
+
+DEPENDENCIES:
+  - BSDropper (from `../`)
+
+EXTERNAL SOURCES:
+  BSDropper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BSDropper: d8a39e616d403313bef5980159268106e2827f6f
+
+PODFILE CHECKSUM: e0a30a970805c5b5d2ccfb5a5a759f68314ee249
+
+COCOAPODS: 1.5.3
