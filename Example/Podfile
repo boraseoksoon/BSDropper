@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BSDropper_Example' do
+  pod 'BSDropper', :path => '../'
+
+  target 'BSDropper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
