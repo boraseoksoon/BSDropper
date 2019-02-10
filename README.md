@@ -143,7 +143,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 You can check how to use it easily through the supported example project. Please check that out if you need.
 <br>
 
-<b>optionally, use searchBar delegate</b>
+
+<br>
+<br>
+<br>
+<br>
+optionally, use searchBar delegate
 <br>
 There is UITextField designed to be used as search bar, you can use delegate optionally as well. 
 <br>
