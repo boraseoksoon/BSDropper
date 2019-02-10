@@ -17,7 +17,8 @@ Swift 4.2 + <br>
 BSDropper is easy to use.<br>
 
 <b>Step 0. import BSDropper</b>
-where you need 
+<br>
+import at where you need 
 <br>
 ```Swift
 import BSDropper
@@ -25,6 +26,7 @@ import BSDropper
 <br>
 
 <b>Step 1. Create Instance programmatically as an instance variable </b>
+<br>
 declare and create instance as an instance variable. 
 <br>
 Dropper is only supported in a programmatical way.  
@@ -41,6 +43,7 @@ private lazy var dropper: BSDropper = { [unowned self] in
 ```
 
 <b>Step2. Setup Dropper Instance</b>
+<br>
 Decleare an instance method to setup BSDropper instance as below 
 <br>
 
@@ -109,6 +112,7 @@ override func viewDidLoad() {
 ```
 
 <b>Step3. Start Observing offset Y</b>
+<br>
 apply observe API and check API at scrollViewDidScroll and scrollViewWillBeginDragging respectively.
 <br>
 
@@ -131,8 +135,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 ```
 
+<br>
 <b>That's all. well done on that. :) </b>
-
+<br>
+You can check how to use it easily through the supported example project. Please check that out if you need.
+<br>
 
 ## Installation
 
