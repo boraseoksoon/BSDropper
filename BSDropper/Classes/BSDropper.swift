@@ -10,6 +10,8 @@ import UIKit
 
 public class BSDropper: UIView {
   // MARK: - IBOutlet, IBActions -
+  @IBOutlet private var ivDropArrow: UIImageView!
+
   public var closureBtTopicSelect: ((_ topicName: String) -> Void)?
   @IBOutlet var btTopicSelect: UIButton!
   @IBAction func actionBtTopicSelect(_ sender: Any) {
@@ -42,6 +44,12 @@ public class BSDropper: UIView {
     }
   }
   
+  public var searchTextField: UITextField {
+    get {
+      return self.tfSearch
+    }
+  }
+  
   @IBOutlet public var tfSearch: UITextField! {
     didSet {
       let imageView = UIImageView(image: #imageLiteral(resourceName: "iconSearch"))
@@ -59,21 +67,12 @@ public class BSDropper: UIView {
     }
   }
   
-  public func setSearchTextFieldLeftImage(_ targetImage: UIImage) -> Void {
-    if let leftView = tfSearch.leftView {
-      leftView.subviews.forEach {
-        if $0 is UIImageView {
-          ($0 as! UIImageView).image = targetImage
-        }
-      }
-    }
-  }
-  
   public var closureBtFilterPost: (() -> Void)?
   @IBOutlet var btFilterPost: UIButton!
   @IBAction func actionBtFilterPost(_ sender: Any) {
     closureBtFilterPost?()
   }
+  
   // MARK: - Instance Variables -
   private var startOffsetY: CGFloat = 0.0
   private var lastContentOffset: CGFloat = 0.0
@@ -103,6 +102,20 @@ public class BSDropper: UIView {
 
 // MARK: - Own Methods -
 extension BSDropper {
+  public func setSearchTextFieldLeftImage(_ targetImage: UIImage) -> Void {
+    if let leftView = tfSearch.leftView {
+      leftView.subviews.forEach {
+        if $0 is UIImageView {
+          ($0 as! UIImageView).image = targetImage
+        }
+      }
+    }
+  }
+
+  public func setDropDownArrowImage(_ targetImage: UIImage) -> Void {
+    ivDropArrow.image = targetImage
+  }
+  
   public func show(completion: @escaping () -> Void) -> Void {
     UIView.animate(withDuration: 0.1, animations: {
       self.frame.origin.y = 0

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         height: BSDropper.HEIGHT
       )
       
-      // dropper.setSearchTextFieldLeftImage(#imageLiteral(resourceName: "iconSearch"))
+      dropper.setSearchTextFieldLeftImage(#imageLiteral(resourceName: "iconSearch"))
       
       /// 검색 텍스트 필드는 HomeController의 델리게이트로 받음.
       dropper.tfSearch.delegate = self
@@ -35,8 +35,6 @@ class ViewController: UIViewController {
       /// 기타 나머지 UI 유저 인풋들은 클로져로 한번에 처리한다.
       dropper.closureBtTopicSelect = { [weak self] topicTitle in
         guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        
-        print("'\(topicTitle)' clicked.")
         
         dropper.show() { [unowned self] in
 //          self.showTransition(targetView: self.postTopicSelectFloatView) {
@@ -47,34 +45,33 @@ class ViewController: UIViewController {
 //            self.tvPost.addGestureRecognizer(self.tvPostTapGestureRecognizer2)
 //          }
         }
+        
+        print("'\(topicTitle)' clicked.")
       }
       
       dropper.closureBtAlarm = { [weak self] in
         guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        print("'Alarm clicked.")
-        
-        self.hidesBottomBarWhenPushed = true
         self.push(to: SampleViewController.instantiate(from: .Main))
-        self.hidesBottomBarWhenPushed = false
+        
+        print("'Alarm clicked.")
       }
       
       dropper.closureBtMyPage = { [weak self] in
         guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        print("'MyPage clicked.")
-        
-        self.hidesBottomBarWhenPushed = true
         self.push(to: SampleViewController.instantiate(from: .Main))
-        self.hidesBottomBarWhenPushed = false
+        
+        print("'MyPage clicked.")
       }
       
       dropper.closureBtFilterPost = { [weak self] in
         guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        print("'Filter clicked.")
-        
+
         DispatchQueue.main.async {
           self.view.endEditing(true)
           // self.postFilterContainerInstantiate().show(animated: true)
         }
+        
+        print("'Filter clicked.")
       }
       
       return dropper
