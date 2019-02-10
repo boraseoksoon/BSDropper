@@ -119,6 +119,95 @@ public class BSDropper: UIView {
 
 // MARK: - Own Methods -
 extension BSDropper {
+  /**
+   used to create dropper instance from nib file to return.
+   - parameters: None
+   - returns: BSDropper
+   */
+  public class func initialization() -> BSDropper {
+    if let dropper = Bundle(for: BSDropper.self).loadNibNamed(BSDropper.XIB_NAME_CONSTANT,
+                                                              owner:self,
+                                                              options:nil)?[0] as? BSDropper {
+      dropper.frame = CGRect(
+        x: 0,
+        y: 0,
+        width: BSDropper.WIDTH,
+        height: BSDropper.HEIGHT
+      )
+      
+      return dropper
+    }
+    
+    return BSDropper()
+  }
+  
+  /**
+   used for scrollViewWillBeginDragging to set standard of offSetY.
+   - parameters:
+      - offsetY: value to assign offsetY at scrollViewWillBeginDragging delegate.
+   - returns: Void
+   */
+  public func check(offsetY: CGFloat) -> Void {
+    self.lastContentOffset = 0.0
+    self.startOffsetY = offsetY
+  }
+  
+  /**
+   used to consistantly keep an eye on scrollViewDidScroll for dropper to drop down or up.
+   - parameters:
+      - scrollView: scrollView instance dropper keeps observing for Y offet.
+   - returns: Void
+   */
+  public func observe(_ scrollView: UIScrollView) -> Void {
+    let totalOffSetY = self.startOffsetY - scrollView.contentOffset.y
+    let differenceOffsetY = totalOffSetY - lastContentOffset
+    
+    if self.lastContentOffset != 0.0 {
+      if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+        // Going up
+        if differenceOffsetY > 0.0 {
+          guard self.frame.origin.y <= 0 else {
+            lastContentOffset = totalOffSetY
+            self.frame.origin.y = 0
+            return
+          }
+          
+          if self.frame.origin.y + differenceOffsetY > 0 {
+            self.frame.origin.y = 0
+          } else {
+            self.frame.origin.y += differenceOffsetY
+          }
+        }
+      } else {
+        // Going down
+        if differenceOffsetY < 0.0 {
+          guard self.frame.origin.y >= 0 - self.frame.size.height else {
+            lastContentOffset = totalOffSetY
+            self.frame.origin.y = 0 - self.frame.size.height
+            return
+          }
+          
+          if self.frame.origin.y + differenceOffsetY < 0 - self.frame.size.height {
+            self.frame.origin.y = 0 - self.frame.size.height
+          } else {
+            self.frame.origin.y += differenceOffsetY
+          }
+        }
+      }
+    }
+    
+    lastContentOffset = totalOffSetY
+  }
+
+  public func show(completion: @escaping () -> Void) -> Void {
+    UIView.animate(withDuration: 0.1, animations: {
+      self.frame.origin.y = 0
+      self.layoutIfNeeded()
+    }, completion: { _ in
+      completion()
+    })
+  }
+  
   public func setSearchTextFieldLeftImage(_ targetImage: UIImage) -> Void {
     if let leftView = tfSearch.leftView {
       leftView.subviews.forEach {
@@ -164,78 +253,6 @@ extension BSDropper {
      * To control inset for proper inset.
      */
     targetScrollView.contentInset = self.adjustedContentInset
-  }
-  
-  public class func initialization() -> BSDropper {
-    if let dropper = Bundle(for: BSDropper.self).loadNibNamed(BSDropper.XIB_NAME_CONSTANT,
-                                                              owner:self,
-                                                              options:nil)?[0] as? BSDropper {
-      dropper.frame = CGRect(
-        x: 0,
-        y: 0,
-        width: BSDropper.WIDTH,
-        height: BSDropper.HEIGHT
-      )
-      
-      return dropper
-    }
-    
-    return BSDropper()
-  }
-  
-  public func show(completion: @escaping () -> Void) -> Void {
-    UIView.animate(withDuration: 0.1, animations: {
-      self.frame.origin.y = 0
-      self.layoutIfNeeded()
-    }, completion: { _ in
-      completion()
-    })
-  }
-
-  public func check(offsetY: CGFloat) -> Void {
-    self.lastContentOffset = 0.0
-    self.startOffsetY = offsetY
-  }
-  
-  public func observe(_ scrollView: UIScrollView) -> Void {
-    let totalOffSetY = self.startOffsetY - scrollView.contentOffset.y
-    let differenceOffsetY = totalOffSetY - lastContentOffset
-    
-    if self.lastContentOffset != 0.0 {
-      if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-        // Going up
-        if differenceOffsetY > 0.0 {
-          guard self.frame.origin.y <= 0 else {
-            lastContentOffset = totalOffSetY
-            self.frame.origin.y = 0
-            return
-          }
-          
-          if self.frame.origin.y + differenceOffsetY > 0 {
-            self.frame.origin.y = 0
-          } else {
-            self.frame.origin.y += differenceOffsetY
-          }
-        }
-      } else {
-        // Going down
-        if differenceOffsetY < 0.0 {
-          guard self.frame.origin.y >= 0 - self.frame.size.height else {
-            lastContentOffset = totalOffSetY
-            self.frame.origin.y = 0 - self.frame.size.height
-            return
-          }
-          
-          if self.frame.origin.y + differenceOffsetY < 0 - self.frame.size.height {
-            self.frame.origin.y = 0 - self.frame.size.height
-          } else {
-            self.frame.origin.y += differenceOffsetY
-          }
-        }
-      }
-    }
-    
-    lastContentOffset = totalOffSetY
   }
 }
 

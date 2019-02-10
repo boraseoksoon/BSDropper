@@ -43,6 +43,9 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    /**
+     * apply BSDropper
+     */
     self.setUpDropper()
   }
 
