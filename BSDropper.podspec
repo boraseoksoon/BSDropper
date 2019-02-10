@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'Custom Navigation UI components'
 
   s.homepage         = 'https://github.com/boraseoksoon/BSDropper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -32,11 +30,14 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'BSDropper/Classes/**/*'
   s.swift_version = '4.2'
+  
+  s.resources = ['BSDropper/Assets/*.xib']
   s.resource_bundles = {
-    'BSDropper' => ['BSDropper/Assets/*.png']
+    'BSDropper' => ['BSDropper/Assets/*'], 
   }
 
+  s.frameworks = 'UIKit'
+  
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

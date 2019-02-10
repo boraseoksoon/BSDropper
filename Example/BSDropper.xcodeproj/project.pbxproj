@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47067E9D2210220D007E0A56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47067E9C2210220D007E0A56 /* Assets.xcassets */; };
 		472A5CF6220F631F000B6623 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CE6220F631E000B6623 /* Utility.swift */; };
 		472A5CFF220F631F000B6623 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF3220F631E000B6623 /* SampleViewController.swift */; };
 		472A5D00220F631F000B6623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF4220F631E000B6623 /* ViewController.swift */; };
 		472A5D01220F631F000B6623 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472A5CF5220F631E000B6623 /* UIViewController+Extension.swift */; };
 		47445E1E220F69D5003E0934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47445E1D220F69D5003E0934 /* Main.storyboard */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		948C8D368FDDC937496500AF /* Pods_BSDropper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A88779FB8A853CC0F01E9D /* Pods_BSDropper_Tests.framework */; };
@@ -36,6 +36,7 @@
 		07F732A66544A6C2528009D4 /* Pods-BSDropper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSDropper_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSDropper_Tests/Pods-BSDropper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		214B86C9CCCD5B4D88304A42 /* Pods-BSDropper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSDropper_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSDropper_Example/Pods-BSDropper_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		28922495F7BDDB59BED43BCE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		47067E9C2210220D007E0A56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47254BA753DA774DDE6D12A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		472A5CE6220F631E000B6623 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = "../../../../Library/Autosave Information/BSDropper/BSDropper/Utility.swift"; sourceTree = "<group>"; };
 		472A5CF3220F631E000B6623 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		607FACD01AFB9204008FA782 /* BSDropper_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSDropper_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* BSDropper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BSDropper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 				472A5CF4220F631E000B6623 /* ViewController.swift */,
 				472A5CF3220F631E000B6623 /* SampleViewController.swift */,
 				47445E1D220F69D5003E0934 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				47067E9C2210220D007E0A56 /* Assets.xcassets */,
 				472A5CE4220F62EE000B6623 /* Utility */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -264,8 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47445E1E220F69D5003E0934 /* Main.storyboard in Resources */,
+				47067E9D2210220D007E0A56 /* Assets.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         height: BSDropper.HEIGHT
       )
       
+      // dropper.setSearchTextFieldLeftImage(#imageLiteral(resourceName: "iconSearch"))
+      
       /// 검색 텍스트 필드는 HomeController의 델리게이트로 받음.
       dropper.tfSearch.delegate = self
       

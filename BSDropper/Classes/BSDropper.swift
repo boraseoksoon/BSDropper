@@ -53,8 +53,19 @@ public class BSDropper: UIView {
       imageView.frame = frame
       
       tfSearch.leftView = leftView
+      
       tfSearch.leftViewMode = .always
       tfSearch.autocorrectionType = .no
+    }
+  }
+  
+  public func setSearchTextFieldLeftImage(_ targetImage: UIImage) -> Void {
+    if let leftView = tfSearch.leftView {
+      leftView.subviews.forEach {
+        if $0 is UIImageView {
+          ($0 as! UIImageView).image = targetImage
+        }
+      }
     }
   }
   
