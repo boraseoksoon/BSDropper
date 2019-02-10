@@ -30,9 +30,6 @@ class ViewController: UIViewController {
       tvPost.tableFooterView = UIView()
       
       tvPost.backgroundColor = UIColor.white
-      
-      tvPost.estimatedRowHeight = 200
-      tvPost.rowHeight = UITableViewAutomaticDimension
     }
   }
   
@@ -150,7 +147,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return UITableViewAutomaticDimension
+    return 50
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -186,7 +183,7 @@ extension ViewController: UITextFieldDelegate {
       textField.resignFirstResponder()
     }
     
-    /// when done
+    /// when search done key is clicked
     if textField.returnKeyType == .search {
       let targetVC = SampleViewController.instantiate(from: .Main)
       let navVC = UINavigationController(rootViewController: targetVC)

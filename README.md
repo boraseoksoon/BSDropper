@@ -44,7 +44,9 @@ private lazy var dropper: BSDropper = { [unowned self] in
 
 <b>Step2. Setup Dropper Instance</b>
 <br>
-Decleare an instance method to setup BSDropper instance as below 
+Decleare an instance method to setup BSDropper instance as below. 
+<br>
+Below Icon resources are just images given in sample project. you can change as you wish. 
 <br>
 
 ```Swift
@@ -72,10 +74,10 @@ func setUpDropper() -> Void {
   * Events Listeners
   */
   dropper.closureBtTopicSelect = { [weak self] topicTitle in
-  guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+  guard let `self` = self else { return }
 
   self.dropper.show() { [weak self] in
-    guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+    guard let `self` = self else { return }
     //
   }
 
@@ -83,17 +85,17 @@ func setUpDropper() -> Void {
   }
 
   self.dropper.closureBtAlarm = { [weak self] in
-    guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+    guard let `self` = self else { return }
     print("'Alarm clicked.")
   }
 
   self.dropper.closureBtMyPage = { [weak self] in
-    guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+    guard let `self` = self else { return }
     print("'MyPage clicked.")
   }
 
   self.dropper.closureBtFilterPost = { [weak self] in
-    guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+    guard let `self` = self else { return }
     print("'Filter clicked.")
   }
 }
@@ -140,6 +142,38 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 <br>
 You can check how to use it easily through the supported example project. Please check that out if you need.
 <br>
+
+<b>optionally, use searchBar delegate</b>
+<br>
+There is UITextField designed to be used as search bar, you can use delegate optionally as well. 
+<br>
+
+```Swift
+// MARK: - UITextFieldDelegate Methods -
+extension ViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField.isFirstResponder {
+      textField.resignFirstResponder()
+    }
+
+    /// when search done key is clicked
+    if textField.returnKeyType == .search {
+      //
+    }
+
+    return true
+  }
+
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    ///
+  }
+
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    ///
+  }
+}
+
+```
 
 ## Installation
 
