@@ -166,6 +166,23 @@ extension BSDropper {
     targetScrollView.contentInset = self.adjustedContentInset
   }
   
+  public class func initialization() -> BSDropper {
+    if let dropper = Bundle(for: BSDropper.self).loadNibNamed(BSDropper.XIB_NAME_CONSTANT,
+                                                              owner:self,
+                                                              options:nil)?[0] as? BSDropper {
+      dropper.frame = CGRect(
+        x: 0,
+        y: 0,
+        width: BSDropper.WIDTH,
+        height: BSDropper.HEIGHT
+      )
+      
+      return dropper
+    }
+    
+    return BSDropper()
+  }
+  
   public func show(completion: @escaping () -> Void) -> Void {
     UIView.animate(withDuration: 0.1, animations: {
       self.frame.origin.y = 0

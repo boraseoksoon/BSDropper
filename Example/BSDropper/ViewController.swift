@@ -17,23 +17,8 @@ class ViewController: UIViewController {
    * initiating dropper instance with setup here...
    */
   private lazy var dropper: BSDropper = { [unowned self] in
-    if let dropper = Bundle(for: BSDropper.self).loadNibNamed(BSDropper.XIB_NAME_CONSTANT,
-                                                   owner:self,
-                                                   options:nil)?[0] as? BSDropper {
-      dropper.frame = CGRect(
-        x: 0,
-        y: 0,
-        width: BSDropper.WIDTH,
-        height: BSDropper.HEIGHT
-      )
-      
-      /// 검색 텍스트 필드는 HomeController의 델리게이트로 받음.
-      dropper.tfSearch.delegate = self
-      
-      return dropper
-    }
-    
-    return BSDropper()
+    let dropper = BSDropper.initialization()
+    return dropper
   }()
   
   @IBOutlet var tvPost: UITableView! {
@@ -92,6 +77,11 @@ extension ViewController {
     dropper.setMyPageIconImage(#imageLiteral(resourceName: "combinedShape"))
     dropper.setAlarmIconImage(#imageLiteral(resourceName: "alarmNotice"))
     dropper.setScrollViewOffSet(tvPost)
+    
+    /**
+     * Search TextField Delegate
+     */
+    dropper.tfSearch.delegate = self
     
     /**
      * Events Listeners
@@ -193,7 +183,7 @@ extension ViewController: UITextFieldDelegate {
       textField.resignFirstResponder()
     }
     
-    /// 키보드상 검색 버튼 클릭시
+    /// when done
     if textField.returnKeyType == .search {
       let targetVC = SampleViewController.instantiate(from: .Main)
       let navVC = UINavigationController(rootViewController: targetVC)
@@ -205,20 +195,10 @@ extension ViewController: UITextFieldDelegate {
   }
   
   func textFieldDidEndEditing(_ textField: UITextField) {
-    /// 검색 시작
-    
-//    self.hideTransitionView(targetView: self.searchRecommendKeywordView) {
-//      // 여기서 필요시 추가 마무리 작업을 수행한다.
-//    }
+    ///
   }
   
   func textFieldDidBeginEditing(_ textField: UITextField) {
-//    self.showTransition(targetView: self.searchRecommendKeywordView) {
-//      // 여기서 필요시 추가 마무리 작업을 수행한다.
-//
-//      // 주제 선택 화면이 떠 있을때 백그라운드 화면 아무데나 클릭하면 주제선택창이 사라져야 한다. 이를 위한 Recognizer 부착
-//      self.dropDownView.addGestureRecognizer(self.dropDownViewTapGestureRecognizer)
-//      self.tvPost.addGestureRecognizer(self.tvPostTapGestureRecognizer2)
-//    }
+    ///
   }
 }
