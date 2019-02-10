@@ -40,31 +40,6 @@ private lazy var dropper: BSDropper = { [unowned self] in
 }()
 ```
 
-<b>Step3. Start Observing offset Y</b>
-apply observe API and check API at scrollViewDidScroll and scrollViewWillBeginDragging respectively.
-<br>
-
-```Swift
-// MARK: - UITableView Delegate Methods -
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    /**
-    * observe scrollView
-    */
-    dropper.observe(scrollView)
-  }
-
-  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    /**
-    * checking offSet
-    */
-    dropper.check(offsetY: scrollView.contentOffset.y)
-  }
-}
-```
-
-Done. :)
-
 <b>Step2. Setup Dropper Instance</b>
 Decleare an instance method to setup BSDropper instance as below 
 <br>
@@ -94,14 +69,14 @@ func setUpDropper() -> Void {
   * Events Listeners
   */
   dropper.closureBtTopicSelect = { [weak self] topicTitle in
-    guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+  guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
 
-    self.dropper.show() { [weak self] in
+  self.dropper.show() { [weak self] in
     guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-      //
-    }
+    //
+  }
 
-    print("'\(topicTitle)' clicked.")
+  print("'\(topicTitle)' clicked.")
   }
 
   self.dropper.closureBtAlarm = { [weak self] in
@@ -120,8 +95,7 @@ func setUpDropper() -> Void {
   }
 }
 ```
-
-Don't forget you must need to apply it in viewDidLoad.
+<b>Don't forget you must need to apply it in viewDidLoad.</b>
 <br>
 ```Swift
 override func viewDidLoad() {
@@ -133,6 +107,32 @@ override func viewDidLoad() {
   self.setUpDropper()
 }
 ```
+
+<b>Step3. Start Observing offset Y</b>
+apply observe API and check API at scrollViewDidScroll and scrollViewWillBeginDragging respectively.
+<br>
+
+```Swift
+// MARK: - UITableView Delegate Methods -
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    /**
+    * observe scrollView
+    */
+    dropper.observe(scrollView)
+  }
+
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    /**
+    * checking offSet
+    */
+    dropper.check(offsetY: scrollView.contentOffset.y)
+  }
+}
+```
+
+<b>That's all. well done on that. :) </b>
+
 
 ## Installation
 
