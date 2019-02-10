@@ -10,10 +10,20 @@ import UIKit
 
 public class BSDropper: UIView {
   // MARK: - IBOutlet, IBActions -
-  @IBOutlet private var ivDropArrow: UIImageView!
+  @IBOutlet var ivDropArrow: UIImageView!
+  public var dropArrowImageView: UIImageView {
+    get {
+      return self.ivDropArrow
+    }
+  }
 
-  public var closureBtTopicSelect: ((_ topicName: String) -> Void)?
   @IBOutlet var btTopicSelect: UIButton!
+  public var closureBtTopicSelect: ((_ topicName: String) -> Void)?
+  public var topicSelectButton: UIButton {
+    get {
+      return self.btTopicSelect
+    }
+  }
   @IBAction func actionBtTopicSelect(_ sender: Any) {
     if let sender = sender as? UIButton {
       if let text = sender.titleLabel?.text {
@@ -26,49 +36,56 @@ public class BSDropper: UIView {
     }
   }
   
-  public var closureBtAlarm: (() -> Void)?
   @IBOutlet var btAlarm: UIButton!
+  public var closureBtAlarm: (() -> Void)?
+  public var alarmButton: UIButton {
+    get {
+      return self.btAlarm
+    }
+  }
   @IBAction func actionBtAlarm(_ sender: Any) {
     closureBtAlarm?()
   }
   
-  public var closureBtMyPage: (() -> Void)?
   @IBOutlet var btMyPage: UIButton!
+  public var closureBtMyPage: (() -> Void)?
+  public var myPageButton: UIButton {
+    get {
+      return self.btMyPage
+    }
+  }
   @IBAction func actionBtMyPage(_ sender: Any) {
     closureBtMyPage?()
   }
   
   @IBOutlet var pnlSearchTextFieldViewBlock: UIView! {
     didSet {
-      pnlSearchTextFieldViewBlock.dropShadow(shadowColor: UIColor.bsDropperGray.cgColor, strength: 1.5)
+      pnlSearchTextFieldViewBlock.dropShadow(
+        shadowColor: UIColor.bsDropperGray.cgColor,
+        strength: 1.5
+      )
     }
   }
   
+  @IBOutlet public var tfSearch: UITextField! {
+    didSet {
+      tfSearch.leftViewMode = .always
+      tfSearch.autocorrectionType = .no
+    }
+  }
   public var searchTextField: UITextField {
     get {
       return self.tfSearch
     }
   }
   
-  @IBOutlet public var tfSearch: UITextField! {
-    didSet {
-      let imageView = UIImageView(image: #imageLiteral(resourceName: "iconSearch"))
-      let leftView = UIView(frame: CGRect(x:0, y:0, width: imageView.frame.size.width + 20, height: imageView.frame.size.height))
-      leftView.addSubview(imageView)
-      
-      var frame = imageView.frame
-      frame.origin.x = frame.origin.x + 10.0
-      imageView.frame = frame
-      
-      tfSearch.leftView = leftView
-      
-      tfSearch.leftViewMode = .always
-      tfSearch.autocorrectionType = .no
+  @IBOutlet var btFilterPost: UIButton!
+  public var closureBtFilterPost: (() -> Void)?
+  public var filterButton: UIButton {
+    get {
+      return self.btFilterPost
     }
   }
-  
-  public var closureBtFilterPost: (() -> Void)?
-  @IBOutlet var btFilterPost: UIButton!
   @IBAction func actionBtFilterPost(_ sender: Any) {
     closureBtFilterPost?()
   }
@@ -109,11 +126,44 @@ extension BSDropper {
           ($0 as! UIImageView).image = targetImage
         }
       }
+    } else {
+      let imageView = UIImageView(image: targetImage)
+      let leftView = UIView(frame:
+        CGRect(
+          x:0,
+          y:0,
+          width: imageView.frame.size.width + 20,
+          height: imageView.frame.size.height
+        )
+      )
+      
+      leftView.addSubview(imageView)
+      
+      var frame = imageView.frame
+      frame.origin.x = frame.origin.x + 10.0
+      imageView.frame = frame
+      
+      tfSearch.leftView = leftView
     }
   }
 
-  public func setDropDownArrowImage(_ targetImage: UIImage) -> Void {
-    ivDropArrow.image = targetImage
+  public func setDropArrowImage(_ targetImage: UIImage) -> Void {
+    ivDropArrow?.image = targetImage
+  }
+  
+  public func setMyPageIconImage(_ targetImage: UIImage) -> Void {
+    myPageButton.setImage(targetImage, for: .normal)
+  }
+  
+  public func setAlarmIconImage(_ targetImage: UIImage) -> Void {
+    alarmButton.setImage(targetImage, for: .normal)
+  }
+  
+  public func setScrollViewOffSet(_ targetScrollView: UIScrollView) -> Void {
+    /**
+     * To control inset for proper inset.
+     */
+    targetScrollView.contentInset = self.adjustedContentInset
   }
   
   public func show(completion: @escaping () -> Void) -> Void {

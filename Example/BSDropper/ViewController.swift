@@ -27,52 +27,8 @@ class ViewController: UIViewController {
         height: BSDropper.HEIGHT
       )
       
-      dropper.setSearchTextFieldLeftImage(#imageLiteral(resourceName: "iconSearch"))
-      
       /// 검색 텍스트 필드는 HomeController의 델리게이트로 받음.
       dropper.tfSearch.delegate = self
-      
-      /// 기타 나머지 UI 유저 인풋들은 클로져로 한번에 처리한다.
-      dropper.closureBtTopicSelect = { [weak self] topicTitle in
-        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        
-        dropper.show() { [unowned self] in
-//          self.showTransition(targetView: self.postTopicSelectFloatView) {
-//            // 여기서 필요시 추가 마무리 작업을 수행한다.
-//
-//            // 주제 선택 화면이 떠 있을때 백그라운드 화면 아무데나 클릭하면 주제선택창이 사라져야 한다. 이를 위한 Recognizer 부착
-//            self.dropDownView.addGestureRecognizer(self.dropDownViewTapGestureRecognizer)
-//            self.tvPost.addGestureRecognizer(self.tvPostTapGestureRecognizer2)
-//          }
-        }
-        
-        print("'\(topicTitle)' clicked.")
-      }
-      
-      dropper.closureBtAlarm = { [weak self] in
-        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        self.push(to: SampleViewController.instantiate(from: .Main))
-        
-        print("'Alarm clicked.")
-      }
-      
-      dropper.closureBtMyPage = { [weak self] in
-        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-        self.push(to: SampleViewController.instantiate(from: .Main))
-        
-        print("'MyPage clicked.")
-      }
-      
-      dropper.closureBtFilterPost = { [weak self] in
-        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
-
-        DispatchQueue.main.async {
-          self.view.endEditing(true)
-          // self.postFilterContainerInstantiate().show(animated: true)
-        }
-        
-        print("'Filter clicked.")
-      }
       
       return dropper
     }
@@ -92,11 +48,6 @@ class ViewController: UIViewController {
       
       tvPost.estimatedRowHeight = 200
       tvPost.rowHeight = UITableViewAutomaticDimension
-      
-      /**
-       * To control inset for proper inset.
-       */
-      tvPost.contentInset = dropper.adjustedContentInset
     }
   }
   
@@ -107,10 +58,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    /**
-     * add the dropper on top to get ready
-     */
-    self.view.addSubview(self.dropper)
+    self.setUpDropper()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -130,6 +78,51 @@ class ViewController: UIViewController {
 
 // MARK: - Own methods -
 extension ViewController {
+  func setUpDropper() -> Void {
+    /**
+     * add the dropper on top to get ready
+     */
+    self.view.addSubview(dropper)
+    
+    /**
+     * Icon setup methods
+     */
+    dropper.setSearchTextFieldLeftImage(#imageLiteral(resourceName: "iconSearch"))
+    dropper.setDropArrowImage(#imageLiteral(resourceName: "boardListOpen"))
+    dropper.setMyPageIconImage(#imageLiteral(resourceName: "combinedShape"))
+    dropper.setAlarmIconImage(#imageLiteral(resourceName: "alarmNotice"))
+    dropper.setScrollViewOffSet(tvPost)
+    
+    /**
+     * Events Listeners
+     */
+    dropper.closureBtTopicSelect = { [weak self] topicTitle in
+      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      
+      self.dropper.show() { [weak self] in
+        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+        //
+      }
+      
+      print("'\(topicTitle)' clicked.")
+    }
+    
+    self.dropper.closureBtAlarm = { [weak self] in
+      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      print("'Alarm clicked.")
+    }
+    
+    self.dropper.closureBtMyPage = { [weak self] in
+      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      print("'MyPage clicked.")
+    }
+    
+    self.dropper.closureBtFilterPost = { [weak self] in
+      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      print("'Filter clicked.")
+    }
+  }
+  
   fileprivate func showTransition(targetView: UIView, completion: (() -> (Void))? = nil) -> Void {
     UIView.transition(with: targetView, duration: 0.25, options: [.transitionCrossDissolve], animations: {
       targetView.alpha = 1.0
@@ -149,6 +142,20 @@ extension ViewController {
 
 // MARK: - UITableView Delegate Methods -
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    /**
+     * observe scrollView
+     */
+    dropper.observe(scrollView)
+  }
+  
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    /**
+     * checking offSet
+     */
+    dropper.check(offsetY: scrollView.contentOffset.y)
+  }
+  
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }
@@ -176,26 +183,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 3
-  }
-  
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    if isDidLayoutFinish {
-      /**
-       * observe scrollView
-       */
-      dropper.observe(scrollView)
-    }
-  }
-  
-  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-    /**
-     * checking offSet
-     */
-    dropper.check(offsetY: scrollView.contentOffset.y)
-    
-//    if self.postTopicSelectFloatView.alpha != 0.0 {
-//      self.hideTransitionView(targetView: self.postTopicSelectFloatView) { /**/ }
-//    }
   }
 }
 

@@ -10,11 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BSDropper" customModule="BSDropper">
-            <connections>
-                <outlet property="ivDropArrow" destination="EJ2-rS-3d1" id="mXh-WT-zvC"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BSDropper" customModule="BSDropper"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BSDropper" customModule="BSDropper">
             <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
@@ -114,6 +110,7 @@
                 <outlet property="btFilterPost" destination="Zdk-6a-iye" id="aM8-Vf-IM3"/>
                 <outlet property="btMyPage" destination="CiU-3f-7Wq" id="zCu-9o-sPr"/>
                 <outlet property="btTopicSelect" destination="ySJ-Am-le9" id="hVl-VS-9qf"/>
+                <outlet property="ivDropArrow" destination="EJ2-rS-3d1" id="Mlz-5b-rY4"/>
                 <outlet property="pnlSearchTextFieldViewBlock" destination="3bl-ZI-CCB" id="etH-dc-RJ2"/>
                 <outlet property="tfSearch" destination="dNd-fq-S1n" id="wB5-fS-rK8"/>
             </connections>
