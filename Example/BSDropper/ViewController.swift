@@ -76,10 +76,13 @@ extension ViewController {
     dropper.setDropArrowImage(#imageLiteral(resourceName: "boardListOpen"))
     dropper.setMyPageIconImage(#imageLiteral(resourceName: "combinedShape"))
     dropper.setAlarmIconImage(#imageLiteral(resourceName: "alarmNotice"))
+    
+    /// set offset Y margin of tableView to fit in dropper.
+    /// if not needed, you don't have to use it though.
     dropper.setScrollViewOffSet(tvPost)
     
     /**
-     * Search TextField Delegate
+     * Search TextField Delegate. Use if needed.
      */
     dropper.tfSearch.delegate = self
     

@@ -5,6 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/BSDropper.svg?style=flat)](https://cocoapods.org/pods/BSDropper)
 [![Platform](https://img.shields.io/cocoapods/p/BSDropper.svg?style=flat)](https://cocoapods.org/pods/BSDropper)
 
+<br>
+<img src="https://media.giphy.com/media/yNObbYWQUQmykwLxyL/giphy.gif" width=240>
+<img src="https://media.giphy.com/media/1zlEhpPmYCIQEeRqvy/giphy.gif" width=240>
+<br>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

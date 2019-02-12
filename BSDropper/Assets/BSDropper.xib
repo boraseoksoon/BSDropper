@@ -17,12 +17,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySJ-Am-le9">
-                    <rect key="frame" x="31" y="30" width="147" height="35"/>
+                    <rect key="frame" x="31" y="30" width="146" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="7BL-ud-bgm"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                    <state key="normal" title="BRDropper">
+                    <state key="normal" title="BSDropper">
                         <color key="titleColor" red="0.1058823529" green="0.3294117647" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -83,7 +83,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boardListOpen" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-rS-3d1">
-                    <rect key="frame" x="188" y="43.666666666666664" width="10" height="8"/>
+                    <rect key="frame" x="187" y="43.666666666666664" width="10" height="8"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
