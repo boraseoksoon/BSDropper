@@ -90,10 +90,10 @@ extension ViewController {
      * Events Listeners
      */
     dropper.closureBtTopicSelect = { [weak self] topicTitle in
-      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      guard let `self` = self else { return }
       
       self.dropper.show() { [weak self] in
-        guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+        guard let `self` = self else { return }
         //
       }
       
@@ -101,17 +101,17 @@ extension ViewController {
     }
     
     self.dropper.closureBtAlarm = { [weak self] in
-      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      guard let `self` = self else { return }
       print("'Alarm clicked.")
     }
     
     self.dropper.closureBtMyPage = { [weak self] in
-      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      guard let `self` = self else { return }
       print("'MyPage clicked.")
     }
     
     self.dropper.closureBtFilterPost = { [weak self] in
-      guard let `self` = self else { GUARD_PRETTY_FUNCTION(); return }
+      guard let `self` = self else { return }
       print("'Filter clicked.")
     }
   }
@@ -188,7 +188,9 @@ extension ViewController: UITextFieldDelegate {
     
     /// when search done key is clicked
     if textField.returnKeyType == .search {
-      let targetVC = SampleViewController.instantiate(from: .Main)
+      let targetVC = UIStoryboard(name: "Main", bundle: nil)
+        .instantiateViewController(withIdentifier:"SampleViewController") as! SampleViewController
+      
       let navVC = UINavigationController(rootViewController: targetVC)
       navVC.setNavigationBarHidden(true, animated: false)
       self.present(navVC, animated: true, completion: nil)

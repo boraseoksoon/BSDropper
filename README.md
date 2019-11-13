@@ -6,9 +6,15 @@
 [![Platform](https://img.shields.io/cocoapods/p/BSDropper.svg?style=flat)](https://cocoapods.org/pods/BSDropper)
 
 <br>
-<img src="https://media.giphy.com/media/yNObbYWQUQmykwLxyL/giphy.gif" width=240>
-<img src="https://media.giphy.com/media/1zlEhpPmYCIQEeRqvy/giphy.gif" width=240>
+<img src="https://firebasestorage.googleapis.com/v0/b/boraseoksoon-ff7d3.appspot.com/o/BSDropDown.png?alt=media&token=8a91d895-5aa5-41ed-bbe8-519227d2f7e1" width=360>
 <br>
+
+
+<b>Click youtube image below to watch BSDropper sample in action.</b>
+<br>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=zp9UFc6NDeo
+" target="_blank"><img src="http://img.youtube.com/vi/zp9UFc6NDeo/0.jpg" 
+alt="BSDropper" width="480" height="360" border="10" /></a>
 
 ## Example
 
